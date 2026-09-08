@@ -1,26 +1,175 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════════════════════════
+   CLARVI CLAUDE — tokens de la dirección modernista
+   
+   Transcritos del canvas de diseño (diseno/*.dc.html), que es la fuente de
+   verdad visual. Si un valor cambia aquí, cambia allá también.
+
+   Tres reglas que definen la dirección y no son negociables:
+     · radio 0 — nada redondeado
+     · sin sombras — la profundidad se sugiere con filetes y aire, no con blur
+     · el color aparece poco y con intención, no repartido
+
+   Todos los pares texto/fondo de aquí llegan a contraste AA (4.5:1).
+   ══════════════════════════════════════════════════════════════════════════ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* Superficies — papel cálido, nunca blanco puro */
+  --papel:        oklch(0.966 0.011 82);
+  --papel-panel:  oklch(0.940 0.013 82);
+  --papel-campo:  oklch(0.988 0.006 85);
+
+  /* Tinta — negro cálido, nunca negro puro */
+  --tinta:        oklch(0.21 0.016 58);
+  --tinta-suave:  oklch(0.42 0.015 60);
+  --tinta-tenue:  oklch(0.50 0.014 60);
+  --sobre-tinta:  oklch(0.95 0.008 85);
+  --sobre-tinta-tenue: oklch(0.72 0.010 82);
+
+  /* Filetes — el modernismo agrupa con líneas, no con cajas */
+  --filete:        oklch(0.855 0.012 80);
+  --filete-fuerte: oklch(0.21 0.016 58);
+  --borde-campo:   oklch(0.72 0.014 78);
+
+  /* Acento — persimonio. Un solo golpe por pantalla */
+  --acento:            oklch(0.55 0.17 38);
+  --acento-hover:      oklch(0.46 0.16 38);
+  --sobre-acento:      oklch(0.98 0.008 85);
+  --sobre-acento-tenue: oklch(0.93 0.045 45);
+
+  /* Estados */
+  --exito:       oklch(0.48 0.11 150);
+  --aviso:       oklch(0.52 0.11 75);
+  --error:       oklch(0.48 0.16 25);
+  --error-panel: oklch(0.940 0.020 32);
+
+  /* Radio: cero. Existe como token para que sea un solo interruptor si algún
+     día la dirección cambia, no para que se use con otro valor. */
+  --radio: 0px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Modo oscuro derivado, no dibujado en el canvas todavía: mismos papeles en
+   carbón cálido y el acento aclarado para sostener contraste sobre fondo
+   oscuro. Vale revisarlo visualmente antes de darlo por bueno. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-tema="claro"]) {
+    color-scheme: dark;
+
+    --papel:        oklch(0.185 0.010 70);
+    --papel-panel:  oklch(0.235 0.011 70);
+    --papel-campo:  oklch(0.215 0.010 70);
+
+    --tinta:        oklch(0.94 0.008 85);
+    --tinta-suave:  oklch(0.78 0.010 82);
+    --tinta-tenue:  oklch(0.68 0.010 82);
+    --sobre-tinta:  oklch(0.16 0.014 62);
+    --sobre-tinta-tenue: oklch(0.42 0.012 70);
+
+    --filete:        oklch(0.32 0.011 70);
+    --filete-fuerte: oklch(0.86 0.010 82);
+    --borde-campo:   oklch(0.42 0.012 70);
+
+    --acento:            oklch(0.72 0.15 42);
+    --acento-hover:      oklch(0.80 0.13 44);
+    --sobre-acento:      oklch(0.16 0.020 60);
+    --sobre-acento-tenue: oklch(0.28 0.060 40);
+
+    --exito:       oklch(0.72 0.13 150);
+    --aviso:       oklch(0.78 0.12 78);
+    --error:       oklch(0.72 0.14 25);
+    --error-panel: oklch(0.26 0.035 28);
   }
 }
 
+:root[data-tema="oscuro"] {
+  color-scheme: dark;
+
+  --papel:        oklch(0.185 0.010 70);
+  --papel-panel:  oklch(0.235 0.011 70);
+  --papel-campo:  oklch(0.215 0.010 70);
+
+  --tinta:        oklch(0.94 0.008 85);
+  --tinta-suave:  oklch(0.78 0.010 82);
+  --tinta-tenue:  oklch(0.68 0.010 82);
+  --sobre-tinta:  oklch(0.16 0.014 62);
+  --sobre-tinta-tenue: oklch(0.42 0.012 70);
+
+  --filete:        oklch(0.32 0.011 70);
+  --filete-fuerte: oklch(0.86 0.010 82);
+  --borde-campo:   oklch(0.42 0.012 70);
+
+  --acento:            oklch(0.72 0.15 42);
+  --acento-hover:      oklch(0.80 0.13 44);
+  --sobre-acento:      oklch(0.16 0.020 60);
+  --sobre-acento-tenue: oklch(0.28 0.060 40);
+
+  --exito:       oklch(0.72 0.13 150);
+  --aviso:       oklch(0.78 0.12 78);
+  --error:       oklch(0.72 0.14 25);
+  --error-panel: oklch(0.26 0.035 28);
+}
+
+@theme inline {
+  --color-papel:        var(--papel);
+  --color-papel-panel:  var(--papel-panel);
+  --color-papel-campo:  var(--papel-campo);
+
+  --color-tinta:        var(--tinta);
+  --color-tinta-suave:  var(--tinta-suave);
+  --color-tinta-tenue:  var(--tinta-tenue);
+  --color-sobre-tinta:  var(--sobre-tinta);
+  --color-sobre-tinta-tenue: var(--sobre-tinta-tenue);
+
+  --color-filete:        var(--filete);
+  --color-filete-fuerte: var(--filete-fuerte);
+  --color-borde-campo:   var(--borde-campo);
+
+  --color-acento:             var(--acento);
+  --color-acento-hover:       var(--acento-hover);
+  --color-sobre-acento:       var(--sobre-acento);
+  --color-sobre-acento-tenue: var(--sobre-acento-tenue);
+
+  --color-exito:       var(--exito);
+  --color-aviso:       var(--aviso);
+  --color-error:       var(--error);
+  --color-error-panel: var(--error-panel);
+
+  --font-sans: var(--fuente-archivo), "Segoe UI", system-ui, sans-serif;
+  --font-mono: var(--fuente-dm-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --radius-none: 0px;
+}
+
+html {
+  height: 100%;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--fuente-archivo), "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Foco visible en todo. Requisito de accesibilidad del brief (§9), y con
+   radio 0 el contorno cuadrado además es coherente con la dirección. */
+:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+}
+
+/* Rótulos en versalitas con tracking amplio: el recurso tipográfico que
+   sostiene la jerarquía cuando no hay cajas ni sombras. */
+.rotulo {
+  font-family: var(--fuente-dm-mono), ui-monospace, monospace;
+  font-size: 0.65625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tinta-tenue);
 }
