@@ -12,12 +12,18 @@ import { copy } from "@/lib/copy";
 
 /**
  * Lo que la base acepta como username, expresado igual que la restricción
- * CHECK de la migración 0002. Si uno cambia, el otro también.
+ * CHECK de la migración 0006. Si uno cambia, el otro también.
  *
  * Entre 3 y 32 caracteres, empieza y termina en letra o número, y en medio
  * admite punto, guion y guion bajo.
+ *
+ * Sin grupo opcional: la primera versión era
+ * `^[a-z0-9]([a-z0-9._-]{1,30}[a-z0-9])?$` y al poder saltarse el grupo
+ * aceptaba un usuario de UN solo carácter — justo lo que el mínimo de 3
+ * pretendía impedir. Una prueba lo encontró; la migración 0006 cierra el
+ * mismo hueco en la base.
  */
-export const PATRON_USUARIO = /^[a-z0-9]([a-z0-9._-]{1,30}[a-z0-9])?$/;
+export const PATRON_USUARIO = /^[a-z0-9][a-z0-9._-]{1,30}[a-z0-9]$/;
 
 /**
  * Normaliza lo que la persona escribió en el campo de usuario.

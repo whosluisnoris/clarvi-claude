@@ -42,11 +42,9 @@ describe("PATRON_USUARIO", () => {
       "mariana.rios",
       "jorge_medina",
       "ana-valdez",
-      "u2",
       "a1b",
       "a".repeat(32),
     ]) {
-      if (valido === "u2") continue; // dos caracteres: se prueba abajo
       expect(PATRON_USUARIO.test(valido), valido).toBe(true);
     }
   });
@@ -54,6 +52,7 @@ describe("PATRON_USUARIO", () => {
   it("rechaza lo que la base rechazaría", () => {
     for (const invalido of [
       "",
+      "x", // un solo carácter: el grupo opcional lo dejaba pasar
       "ab", // menos de 3
       "a".repeat(33), // más de 32
       ".empieza.con.punto",
