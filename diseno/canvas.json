@@ -1,0 +1,38 @@
+{
+  "artboards": [
+    { "file": "DireccionTecnica.dc.html", "title": "A · Tecnica", "x": 0, "y": 0, "w": 1180, "h": 960 },
+    { "file": "Main.dc.html", "title": "B · Editorial (candidata lider)", "x": 1300, "y": 0, "w": 1180, "h": 960 },
+    { "file": "DireccionExpresiva.dc.html", "title": "C · Expresiva", "x": 2600, "y": 0, "w": 1180, "h": 960 }
+  ],
+  "annotations": [
+    {
+      "id": "brief",
+      "x": 0,
+      "y": -300,
+      "w": 500,
+      "text": "CLARVI CLAUDE — tres direcciones, la misma pantalla\n\nTodas muestran /temas/fundamentos-de-prompting con el mismo contenido, para que la comparacion sea de estilo y no de contenido. Elige una: sobre ella dibujo Login, Inicio e /admin/usuarios en alta fidelidad, y de ahi salen los tokens del codigo."
+    },
+    {
+      "id": "nota-a",
+      "x": 620,
+      "y": -300,
+      "w": 400,
+      "text": "A · TECNICA\n\nA favor: el tema es Claude, y esto se siente como herramienta de trabajo. Mono para prompts, densidad alta, mucha informacion por pantalla. Envejece bien.\n\nEn contra: leer parrafos largos en oscuro cansa, y este proyecto tiene mucho texto (explicaciones de reactivos, guias). Fuerza modo claro tambien, o cansa a las 3 semanas."
+    },
+    {
+      "id": "nota-b",
+      "x": 1300,
+      "y": -300,
+      "w": 400,
+      "text": "B · EDITORIAL — mi recomendacion\n\nA favor: es la que mejor sostiene lectura larga en telefono, que es donde el brief dice que la gente va a consultar. Serif de display da caracter sin gritar. El aire hace que un tema vacio no se vea roto.\n\nEn contra: menos densidad, mas scroll en las tablas del admin. Es la menos memorable de las tres en una captura de pantalla."
+    },
+    {
+      "id": "nota-c",
+      "x": 2600,
+      "y": -300,
+      "w": 400,
+      "text": "C · EXPRESIVA\n\nA favor: memorable de verdad. Los bloques de color y los numerales grandes hacen que cada tema se distinga solo. Buena para una capacitacion que quiere sentirse como un evento.\n\nEn contra: la mas cara de mantener. Cada tipo de contenido nuevo (un aviso, un examen cronometrado, un estado de error) obliga a una decision de diseno. Y el contraste alto sostenido cansa."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

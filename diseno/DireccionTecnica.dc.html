@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: oklch(0.78 0.14 70); text-decoration: none; }
+    a:hover { color: oklch(0.86 0.15 72); }
+  </style>
+</helmet>
+
+<div style="width: 1180px; height: 960px; overflow: hidden; display: flex; background: oklch(0.175 0.008 75); color: oklch(0.93 0.006 85); font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 1.5;">
+
+  <!-- ── Barra lateral ───────────────────────────────────────── -->
+  <div style="width: 232px; flex-shrink: 0; display: flex; flex-direction: column; gap: 0; background: oklch(0.148 0.008 75); border-right: 1px solid oklch(0.26 0.009 75);">
+
+    <div style="display: flex; align-items: center; gap: 10px; padding: 22px 20px 20px 20px; border-bottom: 1px solid oklch(0.26 0.009 75);">
+      <div style="width: 26px; height: 26px; border-radius: 5px; background: oklch(0.78 0.14 70); display: flex; align-items: center; justify-content: center;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="oklch(0.16 0.02 70)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"></path><path d="M12 19h8"></path></svg>
+      </div>
+      <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 600; letter-spacing: 0.09em; color: oklch(0.93 0.006 85);">CLARVI CLAUDE</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 2px; padding: 14px 12px;">
+      <div style="display: flex; align-items: center; gap: 11px; height: 44px; padding: 0 12px; border-radius: 6px; color: oklch(0.68 0.008 85);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1z"></path></svg>
+        <span>Inicio</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; height: 44px; padding: 0 12px; border-radius: 6px; background: oklch(0.24 0.012 72); color: oklch(0.95 0.006 85); box-shadow: inset 2px 0 0 oklch(0.78 0.14 70);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(0.78 0.14 70)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18"></path><path d="M9 9v11"></path></svg>
+        <span style="font-weight: 500;">Temas</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; height: 44px; padding: 0 12px; border-radius: 6px; color: oklch(0.68 0.008 85);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h10l6 6v10a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"></path><path d="M14 4v6h6"></path></svg>
+        <span>Recursos</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; height: 44px; padding: 0 12px; border-radius: 6px; color: oklch(0.68 0.008 85);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 7-7"></path><path d="M21 12v7a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h11"></path></svg>
+        <span>Ejercicios</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; height: 44px; padding: 0 12px; border-radius: 6px; color: oklch(0.68 0.008 85);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"></path><path d="M4 12h10"></path><path d="M4 18h13"></path></svg>
+        <span>Prompts</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; height: 44px; padding: 0 12px; border-radius: 6px; color: oklch(0.68 0.008 85);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9"></path><path d="M10 19V5"></path><path d="M16 19v-7"></path><path d="M22 19H2"></path></svg>
+        <span>Mi progreso</span>
+      </div>
+    </div>
+
+    <div style="flex-grow: 1;"></div>
+
+    <div style="display: flex; align-items: center; gap: 10px; padding: 16px 20px; border-top: 1px solid oklch(0.26 0.009 75);">
+      <div style="width: 30px; height: 30px; border-radius: 6px; background: oklch(0.30 0.012 75); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 600; color: oklch(0.82 0.010 85);">MR</div>
+      <div style="display: flex; flex-direction: column; gap: 1px;">
+        <div style="font-size: 12.5px; color: oklch(0.88 0.006 85);">Mariana Ríos</div>
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; color: oklch(0.58 0.010 85);">generacion-01</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Contenido ───────────────────────────────────────────── -->
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 0; overflow: hidden;">
+
+    <div style="display: flex; align-items: center; gap: 8px; height: 52px; padding: 0 36px; border-bottom: 1px solid oklch(0.26 0.009 75); font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.04em; color: oklch(0.58 0.010 85); flex-shrink: 0;">
+      <span>temas</span>
+      <span style="color: oklch(0.42 0.010 75);">/</span>
+      <span style="color: oklch(0.82 0.008 85);">fundamentos-de-prompting</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 30px; padding: 30px 36px;">
+
+      <!-- Encabezado del tema -->
+      <div style="display: flex; flex-direction: column; gap: 9px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: oklch(0.78 0.14 70);">TEMA 01</div>
+          <div style="width: 40px; height: 1px; background: oklch(0.34 0.010 75);"></div>
+        </div>
+        <div style="font-size: 30px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15;">Fundamentos de prompting</div>
+        <div style="font-size: 14.5px; color: oklch(0.68 0.008 85); max-width: 640px; text-wrap: pretty;">Cómo pedirle a Claude lo que necesitas: contexto suficiente, formato de salida explícito y ejemplos que aclaran la intención.</div>
+      </div>
+
+      <!-- Recursos -->
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: oklch(0.72 0.010 85);">RECURSOS</div>
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.50 0.010 75);">3</div>
+          <div style="flex-grow: 1; height: 1px; background: oklch(0.26 0.009 75);"></div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+          <div style="display: flex; flex-direction: column; gap: 10px; padding: 15px; border: 1px solid oklch(0.28 0.009 75); border-radius: 7px; background: oklch(0.205 0.009 75);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="oklch(0.78 0.14 70)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"></rect><path d="M12 17v3"></path><path d="M8 20h8"></path></svg>
+            <div style="font-size: 13.5px; font-weight: 500; line-height: 1.35;">Presentación de la sesión 1</div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; color: oklch(0.56 0.010 85);">PDF · 24 láminas</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; padding: 15px; border: 1px solid oklch(0.28 0.009 75); border-radius: 7px; background: oklch(0.205 0.009 75);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="oklch(0.78 0.14 70)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z"></path><path d="M14 3v5h5"></path><path d="M8 14h8"></path><path d="M8 17h5"></path></svg>
+            <div style="font-size: 13.5px; font-weight: 500; line-height: 1.35;">Guía rápida: anatomía de un prompt</div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; color: oklch(0.56 0.010 85);">PDF · 2 páginas</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; padding: 15px; border: 1px solid oklch(0.28 0.009 75); border-radius: 7px; background: oklch(0.205 0.009 75);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="oklch(0.78 0.14 70)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M10 9.5l5 2.5-5 2.5z"></path></svg>
+            <div style="font-size: 13.5px; font-weight: 500; line-height: 1.35;">Demostración en vivo</div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; color: oklch(0.56 0.010 85);">VIDEO · 12 min</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejercicios -->
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: oklch(0.72 0.010 85);">EJERCICIOS</div>
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.50 0.010 75);">3</div>
+          <div style="flex-grow: 1; height: 1px; background: oklch(0.26 0.009 75);"></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1px; border: 1px solid oklch(0.28 0.009 75); border-radius: 7px; overflow: hidden; background: oklch(0.28 0.009 75);">
+          <div style="display: flex; align-items: center; gap: 14px; height: 54px; padding: 0 15px; background: oklch(0.205 0.009 75);">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(0.72 0.13 150)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.2l2.4 2.4 4.6-5"></path></svg>
+            <div style="flex-grow: 1; font-size: 13.5px;">Reescribir un prompt vago</div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.72 0.13 150);">8 / 10</div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.06em; color: oklch(0.56 0.010 85); width: 96px; text-align: right;">COMPLETADO</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; height: 54px; padding: 0 15px; background: oklch(0.205 0.009 75);">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(0.78 0.14 70)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5V12l3 2"></path></svg>
+            <div style="flex-grow: 1; font-size: 13.5px;">Identificar qué le falta al contexto</div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.56 0.010 85);">2 / 6</div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.06em; color: oklch(0.78 0.14 70); width: 96px; text-align: right;">EN CURSO</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; height: 54px; padding: 0 15px; background: oklch(0.205 0.009 75);">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(0.48 0.010 75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle></svg>
+            <div style="flex-grow: 1; font-size: 13.5px; color: oklch(0.82 0.008 85);">Ordenar los pasos de un prompt efectivo</div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.48 0.010 75);">—</div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.06em; color: oklch(0.56 0.010 85); width: 96px; text-align: right;">SIN EMPEZAR</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prompts -->
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: oklch(0.72 0.010 85);">PROMPTS</div>
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.50 0.010 75);">2</div>
+          <div style="flex-grow: 1; height: 1px; background: oklch(0.26 0.009 75);"></div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+          <div style="display: flex; flex-direction: column; gap: 9px; padding: 15px; border: 1px solid oklch(0.28 0.009 75); border-radius: 7px; background: oklch(0.205 0.009 75);">
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="flex-grow: 1; font-size: 13.5px; font-weight: 500;">Resumen ejecutivo de un documento largo</div>
+              <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin: -11px -11px -11px 0; color: oklch(0.68 0.010 85);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a1 1 0 01-1-1V4a1 1 0 011-1h10a1 1 0 011 1v1"></path></svg>
+              </div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.6; color: oklch(0.64 0.010 85); background: oklch(0.155 0.008 75); border-radius: 5px; padding: 9px 11px;">Lee el documento adjunto y devuélveme…</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 9px; padding: 15px; border: 1px solid oklch(0.28 0.009 75); border-radius: 7px; background: oklch(0.205 0.009 75);">
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="flex-grow: 1; font-size: 13.5px; font-weight: 500;">Correo de seguimiento a cliente</div>
+              <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin: -11px -11px -11px 0; color: oklch(0.68 0.010 85);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a1 1 0 01-1-1V4a1 1 0 011-1h10a1 1 0 011 1v1"></path></svg>
+              </div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.6; color: oklch(0.64 0.010 85); background: oklch(0.155 0.008 75); border-radius: 5px; padding: 9px 11px;">Redacta un correo de seguimiento para…</div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.06em; color: oklch(0.52 0.010 75);">VARIABLES</div>
+              <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; color: oklch(0.78 0.14 70); border: 1px solid oklch(0.34 0.05 70); border-radius: 4px; padding: 2px 7px;">cliente</div>
+              <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; color: oklch(0.78 0.14 70); border: 1px solid oklch(0.34 0.05 70); border-radius: 4px; padding: 2px 7px;">tono</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

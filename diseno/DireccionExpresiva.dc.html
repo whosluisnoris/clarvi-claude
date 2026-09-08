@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: oklch(0.60 0.20 32); text-decoration: none; }
+    a:hover { color: oklch(0.50 0.19 32); }
+  </style>
+</helmet>
+
+<div style="width: 1180px; height: 960px; overflow: hidden; display: flex; flex-direction: column; background: oklch(0.955 0.014 92); color: oklch(0.17 0.020 55); font-family: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 1.45;">
+
+  <!-- ── Franja de navegación ────────────────────────────────── -->
+  <div style="display: flex; align-items: center; gap: 26px; height: 54px; padding: 0 40px; background: oklch(0.17 0.020 55); color: oklch(0.95 0.012 90); flex-shrink: 0;">
+    <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.20em;">CLARVI/CLAUDE</div>
+    <div style="flex-grow: 1;"></div>
+    <div style="display: flex; align-items: center; gap: 2px;">
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 13px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.10em; color: oklch(0.70 0.014 85);">INICIO</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 13px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.10em; background: oklch(0.60 0.20 32); color: oklch(0.98 0.010 90);">TEMAS</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 13px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.10em; color: oklch(0.70 0.014 85);">RECURSOS</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 13px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.10em; color: oklch(0.70 0.014 85);">EJERCICIOS</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 13px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.10em; color: oklch(0.70 0.014 85);">PROMPTS</div>
+    </div>
+    <div style="width: 32px; height: 32px; background: oklch(0.60 0.20 32); display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; color: oklch(0.98 0.010 90);">MR</div>
+  </div>
+
+  <!-- ── Cabecera de bloque ──────────────────────────────────── -->
+  <div style="display: flex; align-items: stretch; height: 196px; flex-shrink: 0; background: oklch(0.60 0.20 32); color: oklch(0.98 0.010 92);">
+    <div style="width: 168px; flex-shrink: 0; display: flex; align-items: flex-start; justify-content: center; padding-top: 6px; border-right: 1px solid oklch(0.68 0.18 32);">
+      <div style="font-size: 148px; font-weight: 800; letter-spacing: -0.06em; line-height: 1; color: oklch(0.98 0.010 92);">01</div>
+    </div>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 0 40px;">
+      <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.20em; color: oklch(0.90 0.045 40);">TEMA</div>
+      <div style="font-size: 50px; font-weight: 800; letter-spacing: -0.035em; line-height: 0.98; max-width: 620px; text-wrap: pretty;">Fundamentos de prompting</div>
+      <div style="font-size: 15px; font-weight: 400; line-height: 1.45; max-width: 560px; color: oklch(0.94 0.028 45); text-wrap: pretty;">Contexto suficiente, formato de salida explícito, ejemplos que aclaran la intención.</div>
+    </div>
+    <div style="width: 132px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 3px; padding: 0 0 20px 0; border-left: 1px solid oklch(0.68 0.18 32);">
+      <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.90 0.045 40); padding-left: 18px;">AVANCE</div>
+      <div style="font-size: 42px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; padding-left: 18px;">33%</div>
+    </div>
+  </div>
+
+  <!-- ── Contenido ───────────────────────────────────────────── -->
+  <div style="display: flex; flex-direction: column; gap: 26px; padding: 30px 40px 0 40px;">
+
+    <!-- Recursos -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; color: oklch(0.17 0.020 55);">RECURSOS</div>
+        <div style="flex-grow: 1; height: 3px; background: oklch(0.17 0.020 55);"></div>
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.45 0.016 60);">03</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 9px; padding: 16px; background: oklch(0.98 0.010 92); border: 2px solid oklch(0.17 0.020 55);">
+          <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.60 0.20 32);">PDF · 24 LÁMINAS</div>
+          <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.2;">Presentación de la sesión 1</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 9px; padding: 16px; background: oklch(0.98 0.010 92); border: 2px solid oklch(0.17 0.020 55);">
+          <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.60 0.20 32);">PDF · 2 PÁGINAS</div>
+          <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.2;">Guía rápida: anatomía de un prompt</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 9px; padding: 16px; background: oklch(0.48 0.16 258); border: 2px solid oklch(0.17 0.020 55); color: oklch(0.98 0.010 92);">
+          <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.86 0.070 255);">VIDEO · 12 MIN</div>
+          <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.2;">Demostración en vivo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ejercicios -->
+    <div style="display: flex; flex-direction: column; gap: 0px;">
+      <div style="display: flex; align-items: center; gap: 12px; padding-bottom: 12px;">
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; color: oklch(0.17 0.020 55);">EJERCICIOS</div>
+        <div style="flex-grow: 1; height: 3px; background: oklch(0.17 0.020 55);"></div>
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.45 0.016 60);">03</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 18px; height: 56px; border-bottom: 1.5px solid oklch(0.82 0.014 80);">
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; color: oklch(0.60 0.016 62); width: 26px;">01</div>
+        <div style="flex-grow: 1; font-size: 17px; font-weight: 600; letter-spacing: -0.015em;">Reescribir un prompt vago</div>
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; color: oklch(0.98 0.010 92); background: oklch(0.45 0.13 150); padding: 5px 9px;">8/10</div>
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.12em; color: oklch(0.45 0.016 60); width: 108px; text-align: right;">COMPLETADO</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 18px; height: 56px; border-bottom: 1.5px solid oklch(0.82 0.014 80);">
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; color: oklch(0.60 0.016 62); width: 26px;">02</div>
+        <div style="flex-grow: 1; font-size: 17px; font-weight: 600; letter-spacing: -0.015em;">Identificar qué le falta al contexto</div>
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; color: oklch(0.98 0.010 92); background: oklch(0.60 0.20 32); padding: 5px 9px;">2/6</div>
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.12em; color: oklch(0.45 0.016 60); width: 108px; text-align: right;">EN CURSO</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 18px; height: 56px; border-bottom: 1.5px solid oklch(0.82 0.014 80);">
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; color: oklch(0.60 0.016 62); width: 26px;">03</div>
+        <div style="flex-grow: 1; font-size: 17px; font-weight: 600; letter-spacing: -0.015em; color: oklch(0.42 0.016 58);">Ordenar los pasos de un prompt efectivo</div>
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; color: oklch(0.60 0.016 62); border: 1.5px solid oklch(0.78 0.014 78); padding: 3.5px 9px;">—</div>
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.12em; color: oklch(0.45 0.016 60); width: 108px; text-align: right;">SIN EMPEZAR</div>
+      </div>
+    </div>
+
+    <!-- Prompts -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; color: oklch(0.17 0.020 55);">PROMPTS</div>
+        <div style="flex-grow: 1; height: 3px; background: oklch(0.17 0.020 55);"></div>
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.45 0.016 60);">02</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 14px; padding: 15px 12px 15px 18px; background: oklch(0.17 0.020 55); color: oklch(0.96 0.010 92);">
+          <div style="flex-grow: 1; font-size: 17px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.2;">Resumen ejecutivo de un documento largo</div>
+          <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex-shrink: 0; background: oklch(0.60 0.20 32);">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(0.98 0.010 92)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="1"></rect><path d="M5 15H4a1 1 0 01-1-1V4a1 1 0 011-1h10a1 1 0 011 1v1"></path></svg>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; padding: 15px 12px 15px 18px; background: oklch(0.17 0.020 55); color: oklch(0.96 0.010 92);">
+          <div style="flex-grow: 1; font-size: 17px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.2;">Correo de seguimiento a cliente</div>
+          <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex-shrink: 0; background: oklch(0.60 0.20 32);">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(0.98 0.010 92)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="1"></rect><path d="M5 15H4a1 1 0 01-1-1V4a1 1 0 011-1h10a1 1 0 011 1v1"></path></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
