@@ -1,13 +1,52 @@
 {
   "pages": [
-    { "id": "propuesta", "name": "Propuesta" },
-    { "id": "exploracion", "name": "Exploracion inicial" }
+    {
+      "id": "propuesta",
+      "name": "Propuesta"
+    },
+    {
+      "id": "exploracion",
+      "name": "Exploracion inicial"
+    }
   ],
   "artboards": [
-    { "file": "Main.dc.html", "title": "Modernista", "page": "propuesta", "x": 0, "y": 0, "w": 1180, "h": 960 },
-    { "file": "DireccionExpresiva.dc.html", "title": "C · Expresiva (de donde partio)", "page": "propuesta", "x": 1300, "y": 0, "w": 1180, "h": 960 },
-    { "file": "DireccionTecnica.dc.html", "title": "A · Tecnica", "page": "exploracion", "x": 0, "y": 0, "w": 1180, "h": 960 },
-    { "file": "DireccionEditorial.dc.html", "title": "B · Editorial", "page": "exploracion", "x": 1300, "y": 0, "w": 1180, "h": 960 }
+    {
+      "file": "Main.dc.html",
+      "title": "Modernista — aprobada",
+      "page": "propuesta",
+      "x": 0,
+      "y": 0,
+      "w": 1180,
+      "h": 1180,
+      "is_interactive": true
+    },
+    {
+      "file": "DireccionExpresiva.dc.html",
+      "title": "C · Expresiva (de donde partio)",
+      "page": "propuesta",
+      "x": 1300,
+      "y": 0,
+      "w": 1180,
+      "h": 960
+    },
+    {
+      "file": "DireccionTecnica.dc.html",
+      "title": "A · Tecnica",
+      "page": "exploracion",
+      "x": 0,
+      "y": 0,
+      "w": 1180,
+      "h": 960
+    },
+    {
+      "file": "DireccionEditorial.dc.html",
+      "title": "B · Editorial",
+      "page": "exploracion",
+      "x": 1300,
+      "y": 0,
+      "w": 1180,
+      "h": 960
+    }
   ],
   "annotations": [
     {
@@ -16,7 +55,7 @@
       "x": 0,
       "y": -330,
       "w": 520,
-      "text": "MODERNISTA\n\nTomando lo que te gusto de C —los numerales grandes, el bloque de color, la estructura declarada— pero con el vocabulario real del modernismo: reticula, filetes y aire hacen el trabajo de agrupar, en lugar de tarjetas.\n\nLo que quita, y es justo lo que delata a un diseno hecho por AI: esquinas redondeadas, sombras suaves, tarjetas identicas en rejilla, degradados. Aqui no hay ninguno.\n\nLo que agrega: papel calido en vez de blanco puro, interlineado generoso y un solo golpe de color colocado con intencion, no repartido. Archivo para todo, DM Mono para metadatos.\n\nNo pude leer el design system 'modernist' de Claude Design desde esta sesion (necesita /design-login interactivo), asi que esto viene de los principios del movimiento, no copiado de ese kit."
+      "text": "MODERNISTA — direccion aprobada\n\nLos prompts ahora se despliegan: haz clic en cualquiera de los dos y el cuerpo aparece en DM Mono, la misma tipografia de codigo que usan los metadatos. En el de correo, las variables van como chips dentro del texto en vez de marcadores en crudo, porque el formulario que las sustituye ya vive al lado del boton de copiar.\n\nEl resto de la direccion no se toco: reticula, filetes y aire hacen el trabajo de agrupar, sin esquinas redondeadas, sombras ni degradados. Papel calido, un solo golpe de color. Archivo + DM Mono.\n\nSiguiente: Login, Inicio y /admin/usuarios sobre esta misma direccion, con la version de telefono a 390px."
     },
     {
       "id": "expresiva-nota",
@@ -35,5 +74,8 @@
       "text": "Las dos primeras direcciones, guardadas como referencia. Ya no compiten: la propuesta viva esta en la pagina Propuesta.\n\nA ambas se les corrigieron los colores de texto secundario que quedaban por debajo de contraste AA."
     }
   ],
-  "launch": { "view": "canvas", "page": "propuesta" }
+  "launch": {
+    "view": "canvas",
+    "page": "propuesta"
+  }
 }
