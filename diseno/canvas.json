@@ -1,81 +1,47 @@
 {
   "pages": [
-    {
-      "id": "propuesta",
-      "name": "Propuesta"
-    },
-    {
-      "id": "exploracion",
-      "name": "Exploracion inicial"
-    }
+    { "id": "pantallas", "name": "Pantallas" },
+    { "id": "telefono", "name": "Telefono" },
+    { "id": "exploracion", "name": "Exploracion inicial" }
   ],
   "artboards": [
-    {
-      "file": "Main.dc.html",
-      "title": "Modernista — aprobada",
-      "page": "propuesta",
-      "x": 0,
-      "y": 0,
-      "w": 1180,
-      "h": 1180,
-      "is_interactive": true
-    },
-    {
-      "file": "DireccionExpresiva.dc.html",
-      "title": "C · Expresiva (de donde partio)",
-      "page": "propuesta",
-      "x": 1300,
-      "y": 0,
-      "w": 1180,
-      "h": 960
-    },
-    {
-      "file": "DireccionTecnica.dc.html",
-      "title": "A · Tecnica",
-      "page": "exploracion",
-      "x": 0,
-      "y": 0,
-      "w": 1180,
-      "h": 960
-    },
-    {
-      "file": "DireccionEditorial.dc.html",
-      "title": "B · Editorial",
-      "page": "exploracion",
-      "x": 1300,
-      "y": 0,
-      "w": 1180,
-      "h": 960
-    }
+    { "file": "Login.dc.html", "title": "Login", "page": "pantallas", "x": 0, "y": 0, "w": 1180, "h": 960 },
+    { "file": "Inicio.dc.html", "title": "Inicio · estado vacio (lo que entrega la Fase 1)", "page": "pantallas", "x": 1300, "y": 0, "w": 1180, "h": 960 },
+    { "file": "Main.dc.html", "title": "Tema · con prompts desplegables", "page": "pantallas", "x": 2600, "y": 0, "w": 1180, "h": 1180, "is_interactive": true },
+    { "file": "AdminUsuarios.dc.html", "title": "Admin · Usuarios", "page": "pantallas", "x": 3900, "y": 0, "w": 1180, "h": 1100 },
+
+    { "file": "TemaMovil.dc.html", "title": "Tema · 390 px", "page": "telefono", "x": 0, "y": 0, "w": 390, "h": 844 },
+    { "file": "AdminUsuariosMovil.dc.html", "title": "Admin Usuarios · 390 px", "page": "telefono", "x": 510, "y": 0, "w": 390, "h": 844 },
+
+    { "file": "DireccionTecnica.dc.html", "title": "A · Tecnica", "page": "exploracion", "x": 0, "y": 0, "w": 1180, "h": 960 },
+    { "file": "DireccionEditorial.dc.html", "title": "B · Editorial", "page": "exploracion", "x": 1300, "y": 0, "w": 1180, "h": 960 },
+    { "file": "DireccionExpresiva.dc.html", "title": "C · Expresiva", "page": "exploracion", "x": 2600, "y": 0, "w": 1180, "h": 960 }
   ],
   "annotations": [
     {
-      "id": "propuesta-nota",
-      "page": "propuesta",
+      "id": "pantallas-nota",
+      "page": "pantallas",
       "x": 0,
-      "y": -330,
-      "w": 520,
-      "text": "MODERNISTA — direccion aprobada\n\nLos prompts ahora se despliegan: haz clic en cualquiera de los dos y el cuerpo aparece en DM Mono, la misma tipografia de codigo que usan los metadatos. En el de correo, las variables van como chips dentro del texto en vez de marcadores en crudo, porque el formulario que las sustituye ya vive al lado del boton de copiar.\n\nEl resto de la direccion no se toco: reticula, filetes y aire hacen el trabajo de agrupar, sin esquinas redondeadas, sombras ni degradados. Papel calido, un solo golpe de color. Archivo + DM Mono.\n\nSiguiente: Login, Inicio y /admin/usuarios sobre esta misma direccion, con la version de telefono a 390px."
+      "y": -300,
+      "w": 500,
+      "text": "PANTALLAS DE LA FASE 1\n\nLas tres que la Fase 1 realmente construye, mas la de tema que ya aprobaste. De aqui salen los tokens que van a globals.css.\n\nLOGIN: sin registro y sin 'olvide mi contrasena', porque las cuentas las da de alta el facilitador. El error es deliberadamente generico y no dice si el usuario existe — decirlo permitiria enumerar usuarios. Se muestra el estado de error, que es el que importa aprobar.\n\nINICIO: el estado vacio real. Cuando termine la Fase 1 no hay material todavia, asi que en vez de una tabla en blanco dice que va a pasar y que va a aparecer ahi.\n\nADMIN USUARIOS: la contrasena del grupo es lo mas visible de la pantalla porque rotarla saca a todos de su sesion. Se muestra una huella corta del hash, nunca la contrasena."
     },
     {
-      "id": "expresiva-nota",
-      "page": "propuesta",
-      "x": 1300,
-      "y": -330,
-      "w": 420,
-      "text": "C · EXPRESIVA — la que te llamo la atencion\n\nLa dejo al lado para que veas que se conservo y que se cambio. Sus problemas: el contraste alto sostenido cansa, y cada tipo de contenido nuevo obligaria a una decision de diseno.\n\nYa lleva corregidos los colores que no llegaban a contraste AA."
+      "id": "telefono-nota",
+      "page": "telefono",
+      "x": 0,
+      "y": -280,
+      "w": 430,
+      "text": "TELEFONO · 390 px\n\nEl brief dice que en una capacitacion la gente consulta desde el telefono, asi que las dos pantallas mas usadas se disenaron aqui tambien, no adaptadas despues.\n\nDos decisiones: en el tema, el bloque de avance pasa debajo del titulo en vez de al lado. En el admin, la tabla de 7 columnas se convierte en lista apilada — encogerla habria dejado texto de 9 px.\n\nTodo lo tocable mide 44 px o mas. Sin barra de estado ni teclado dibujados: en un telefono real se pintan encima."
     },
     {
       "id": "exploracion-nota",
       "page": "exploracion",
       "x": 0,
-      "y": -260,
+      "y": -240,
       "w": 460,
-      "text": "Las dos primeras direcciones, guardadas como referencia. Ya no compiten: la propuesta viva esta en la pagina Propuesta.\n\nA ambas se les corrigieron los colores de texto secundario que quedaban por debajo de contraste AA."
+      "text": "Las tres direcciones iniciales, guardadas como referencia. Ya no compiten: la aprobada es la modernista, en la pagina Pantallas.\n\nA las tres se les corrigieron los colores de texto secundario que quedaban por debajo de contraste AA."
     }
   ],
-  "launch": {
-    "view": "canvas",
-    "page": "propuesta"
-  }
+  "launch": { "view": "canvas", "page": "pantallas" }
 }

@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: oklch(0.55 0.17 38); text-decoration: none; }
+    a:hover { color: oklch(0.46 0.16 38); }
+  </style>
+</helmet>
+
+<div style="width: 1180px; height: 1100px; overflow: hidden; display: flex; flex-direction: column; background: oklch(0.966 0.011 82); color: oklch(0.21 0.016 58); font-family: 'Archivo', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 1.5;">
+
+  <!-- ── Navegación de administración: se distingue por la franja de acento ── -->
+  <div style="height: 3px; background: oklch(0.55 0.17 38); flex-shrink: 0;"></div>
+  <div style="display: flex; align-items: center; gap: 22px; height: 54px; padding: 0 32px; background: oklch(0.21 0.016 58); color: oklch(0.95 0.008 85); flex-shrink: 0;">
+    <div style="display: flex; flex-direction: column; gap: 0px;">
+      <div style="font-size: 14px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15;">CLARVI<span style="color: oklch(0.72 0.14 40);">·</span>CLAUDE</div>
+      <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 8.5px; letter-spacing: 0.20em; color: oklch(0.76 0.11 42); line-height: 1.15;">ADMINISTRACIÓN</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0px; flex-grow: 1;">
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 11px; font-size: 13px; color: oklch(0.72 0.010 82);">Tablero</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 11px; font-size: 13px; font-weight: 600; color: oklch(0.97 0.008 85); box-shadow: inset 0 -3px 0 oklch(0.62 0.19 38);">Usuarios</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 11px; font-size: 13px; color: oklch(0.72 0.010 82);">Cohortes</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 11px; font-size: 13px; color: oklch(0.72 0.010 82);">Temas</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 11px; font-size: 13px; color: oklch(0.72 0.010 82);">Recursos</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 11px; font-size: 13px; color: oklch(0.72 0.010 82);">Evaluaciones</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 11px; font-size: 13px; color: oklch(0.72 0.010 82);">Prompts</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 11px; font-size: 13px; color: oklch(0.72 0.010 82);">Resultados</div>
+      <div style="display: flex; align-items: center; height: 44px; padding: 0 11px; font-size: 13px; color: oklch(0.72 0.010 82);">Ajustes</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: oklch(0.76 0.010 82);">ADMIN</div>
+      <div style="width: 30px; height: 30px; background: oklch(0.55 0.17 38); display: flex; align-items: center; justify-content: center; font-size: 11.5px; font-weight: 600; color: oklch(0.98 0.008 85);">LN</div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 26px; padding: 34px 32px 0 32px;">
+
+    <!-- Encabezado y acciones -->
+    <div style="display: flex; align-items: flex-end; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 5px; flex-grow: 1;">
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.20em; color: oklch(0.55 0.17 38);">ADMINISTRACIÓN</div>
+        <div style="font-size: 38px; font-weight: 700; letter-spacing: -0.034em; line-height: 1.05;">Usuarios</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 9px;">
+        <div style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 15px; border: 1.5px solid oklch(0.21 0.016 58); font-size: 13.5px; font-weight: 500;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 4v16"></path><path d="M4 12h16"></path></svg>
+          Agregar usuario
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 15px; border: 1.5px solid oklch(0.21 0.016 58); font-size: 13.5px; font-weight: 500;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 15V3"></path><path d="M7.5 10.5L12 15l4.5-4.5"></path><path d="M3 17v4h18v-4"></path></svg>
+          Carga por CSV
+        </div>
+      </div>
+    </div>
+
+    <!-- Contraseña del grupo: el estado más delicado de la pantalla, y por eso el más visible -->
+    <div style="display: flex; align-items: center; gap: 26px; padding: 18px 22px; background: oklch(0.940 0.013 82); border-left: 3px solid oklch(0.55 0.17 38);">
+      <div style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1;">
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.18em; color: oklch(0.50 0.014 60);">CONTRASEÑA DEL GRUPO</div>
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <div style="font-size: 16px; font-weight: 500; letter-spacing: -0.015em;">Rotada hace 12 días</div>
+          <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; color: oklch(0.50 0.014 60);">huella 4f2a·9c81</div>
+        </div>
+        <div style="font-size: 12.5px; color: oklch(0.50 0.014 60); text-wrap: pretty;">Aplica a los 8 participantes. Los admins tienen contraseña propia y no entran en la rotación.</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; background: oklch(0.21 0.016 58); color: oklch(0.97 0.008 85); font-size: 13.5px; font-weight: 600;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M20 11A8 8 0 105.6 6.6"></path><path d="M20 4v5h-5"></path></svg>
+        Rotar contraseña
+      </div>
+    </div>
+
+    <!-- Filtros -->
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px; width: 268px; height: 42px; padding: 0 13px; background: oklch(0.988 0.006 85); border: 1px solid oklch(0.72 0.014 78);">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="oklch(0.50 0.014 60)" stroke-width="1.9" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.5 15.5L21 21"></path></svg>
+        <div style="font-size: 13.5px; color: oklch(0.50 0.014 60);">Buscar por usuario o nombre</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 42px; padding: 0 13px; border: 1px solid oklch(0.72 0.014 78); font-size: 13.5px;">
+        Generación 01
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="oklch(0.50 0.014 60)" stroke-width="2.2" stroke-linecap="square"><path d="M5 9l7 7 7-7"></path></svg>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 42px; padding: 0 13px; border: 1px solid oklch(0.72 0.014 78); font-size: 13.5px; color: oklch(0.50 0.014 60);">
+        Todos los estados
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="oklch(0.50 0.014 60)" stroke-width="2.2" stroke-linecap="square"><path d="M5 9l7 7 7-7"></path></svg>
+      </div>
+      <div style="flex-grow: 1;"></div>
+      <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; color: oklch(0.50 0.014 60);">9 usuarios</div>
+    </div>
+
+    <!-- Tabla: filetes finos, sin zebra, sin sombras. Los datos duros en mono para alinear. -->
+    <div style="display: flex; flex-direction: column; gap: 0px;">
+      <div style="display: flex; align-items: center; gap: 16px; height: 34px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: oklch(0.50 0.014 60);">
+        <div style="width: 168px;">USUARIO</div>
+        <div style="flex-grow: 1;">NOMBRE</div>
+        <div style="width: 132px;">COHORTE</div>
+        <div style="width: 104px;">ROL</div>
+        <div style="width: 128px;">ÚLTIMO ACCESO</div>
+        <div style="width: 92px;">ESTADO</div>
+        <div style="width: 28px;"></div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; height: 54px; border-top: 1.5px solid oklch(0.21 0.016 58);">
+        <div style="width: 168px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13.5px;">luis.noris</div>
+        <div style="flex-grow: 1; font-size: 15px; font-weight: 500;">Luis Noris</div>
+        <div style="width: 132px; font-size: 13.5px; color: oklch(0.50 0.014 60);">—</div>
+        <div style="width: 104px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.10em; color: oklch(0.55 0.17 38);">ADMIN</div>
+        <div style="width: 128px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12.5px; color: oklch(0.42 0.015 60);">hoy 09:14</div>
+        <div style="width: 92px; font-size: 13px; color: oklch(0.48 0.11 150);">Activo</div>
+        <div style="width: 28px; display: flex; justify-content: flex-end; color: oklch(0.50 0.014 60);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5.5" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="12" cy="18.5" r="1.6"></circle></svg></div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; height: 54px; border-top: 1px solid oklch(0.855 0.012 80);">
+        <div style="width: 168px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13.5px;">mariana.rios</div>
+        <div style="flex-grow: 1; font-size: 15px; font-weight: 500;">Mariana Ríos</div>
+        <div style="width: 132px; font-size: 13.5px; color: oklch(0.42 0.015 60);">Generación 01</div>
+        <div style="width: 104px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.10em; color: oklch(0.50 0.014 60);">PARTICIPANTE</div>
+        <div style="width: 128px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12.5px; color: oklch(0.42 0.015 60);">hoy 08:02</div>
+        <div style="width: 92px; font-size: 13px; color: oklch(0.48 0.11 150);">Activo</div>
+        <div style="width: 28px; display: flex; justify-content: flex-end; color: oklch(0.50 0.014 60);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5.5" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="12" cy="18.5" r="1.6"></circle></svg></div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; height: 54px; border-top: 1px solid oklch(0.855 0.012 80);">
+        <div style="width: 168px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13.5px;">jorge.medina</div>
+        <div style="flex-grow: 1; font-size: 15px; font-weight: 500;">Jorge Medina</div>
+        <div style="width: 132px; font-size: 13.5px; color: oklch(0.42 0.015 60);">Generación 01</div>
+        <div style="width: 104px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.10em; color: oklch(0.50 0.014 60);">PARTICIPANTE</div>
+        <div style="width: 128px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12.5px; color: oklch(0.42 0.015 60);">ayer 17:40</div>
+        <div style="width: 92px; font-size: 13px; color: oklch(0.48 0.11 150);">Activo</div>
+        <div style="width: 28px; display: flex; justify-content: flex-end; color: oklch(0.50 0.014 60);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5.5" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="12" cy="18.5" r="1.6"></circle></svg></div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; height: 54px; border-top: 1px solid oklch(0.855 0.012 80);">
+        <div style="width: 168px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13.5px;">ana.valdez</div>
+        <div style="flex-grow: 1; font-size: 15px; font-weight: 500;">Ana Valdez</div>
+        <div style="width: 132px; font-size: 13.5px; color: oklch(0.42 0.015 60);">Generación 01</div>
+        <div style="width: 104px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.10em; color: oklch(0.50 0.014 60);">PARTICIPANTE</div>
+        <div style="width: 128px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12.5px; color: oklch(0.42 0.015 60);">hace 3 días</div>
+        <div style="width: 92px; font-size: 13px; color: oklch(0.48 0.11 150);">Activo</div>
+        <div style="width: 28px; display: flex; justify-content: flex-end; color: oklch(0.50 0.014 60);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5.5" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="12" cy="18.5" r="1.6"></circle></svg></div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; height: 54px; border-top: 1px solid oklch(0.855 0.012 80);">
+        <div style="width: 168px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13.5px;">pablo.sena</div>
+        <div style="flex-grow: 1; font-size: 15px; font-weight: 500;">Pablo Sena</div>
+        <div style="width: 132px; font-size: 13.5px; color: oklch(0.42 0.015 60);">Generación 01</div>
+        <div style="width: 104px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.10em; color: oklch(0.50 0.014 60);">PARTICIPANTE</div>
+        <div style="width: 128px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12.5px; color: oklch(0.50 0.014 60);">nunca</div>
+        <div style="width: 92px; font-size: 13px; color: oklch(0.52 0.11 75);">Sin entrar</div>
+        <div style="width: 28px; display: flex; justify-content: flex-end; color: oklch(0.50 0.014 60);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5.5" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="12" cy="18.5" r="1.6"></circle></svg></div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; height: 54px; border-top: 1px solid oklch(0.855 0.012 80);">
+        <div style="width: 168px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13.5px; color: oklch(0.50 0.014 60);">rocio.tapia</div>
+        <div style="flex-grow: 1; font-size: 15px; font-weight: 500; color: oklch(0.50 0.014 60);">Rocío Tapia</div>
+        <div style="width: 132px; font-size: 13.5px; color: oklch(0.50 0.014 60);">Generación 01</div>
+        <div style="width: 104px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.10em; color: oklch(0.50 0.014 60);">PARTICIPANTE</div>
+        <div style="width: 128px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12.5px; color: oklch(0.50 0.014 60);">hace 1 mes</div>
+        <div style="width: 92px; font-size: 13px; color: oklch(0.48 0.16 25);">Desactivado</div>
+        <div style="width: 28px; display: flex; justify-content: flex-end; color: oklch(0.50 0.014 60);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5.5" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="12" cy="18.5" r="1.6"></circle></svg></div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; height: 54px; border-top: 1px solid oklch(0.855 0.012 80); border-bottom: 1.5px solid oklch(0.21 0.016 58);">
+        <div style="width: 168px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13.5px;">sofia.arriaga</div>
+        <div style="flex-grow: 1; font-size: 15px; font-weight: 500;">Sofía Arriaga</div>
+        <div style="width: 132px; font-size: 13.5px; color: oklch(0.42 0.015 60);">Generación 01</div>
+        <div style="width: 104px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.10em; color: oklch(0.50 0.014 60);">PARTICIPANTE</div>
+        <div style="width: 128px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12.5px; color: oklch(0.42 0.015 60);">hoy 10:31</div>
+        <div style="width: 92px; font-size: 13px; color: oklch(0.48 0.11 150);">Activo</div>
+        <div style="width: 28px; display: flex; justify-content: flex-end; color: oklch(0.50 0.014 60);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5.5" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="12" cy="18.5" r="1.6"></circle></svg></div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 14px; height: 52px;">
+        <div style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; color: oklch(0.50 0.014 60);">7 de 9</div>
+        <div style="flex-grow: 1;"></div>
+        <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 40px; border: 1px solid oklch(0.855 0.012 80); color: oklch(0.72 0.014 78);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M15 5l-7 7 7 7"></path></svg></div>
+        <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 40px; border: 1.5px solid oklch(0.21 0.016 58);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M9 5l7 7-7 7"></path></svg></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
