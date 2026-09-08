@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  esquemaAltaUsuario,
   PATRON_USUARIO,
   correoSintetico,
   esquemaAcceso,
@@ -140,5 +141,49 @@ describe("esquemaAcceso", () => {
       esquemaAcceso.safeParse({ usuario: "mariana rios", contrasena: "x" })
         .success,
     ).toBe(false);
+  });
+});
+
+describe("esquemaAltaUsuario", () => {
+  it("exige contraseña larga para un admin, porque la suya no se rota nunca", () => {
+    const corta = esquemaAltaUsuario.safeParse({
+      usuario: "nuevo.admin",
+      nombreVisible: "Nuevo Admin",
+      rol: "admin",
+      contrasena: "corta123",
+    });
+    expect(corta.success).toBe(false);
+    if (!corta.success) {
+      expect(corta.error.issues[0]?.message).toContain("al menos 12");
+    }
+
+    const larga = esquemaAltaUsuario.safeParse({
+      usuario: "nuevo.admin",
+      nombreVisible: "Nuevo Admin",
+      rol: "admin",
+      contrasena: "una-contrasena-larga",
+    });
+    expect(larga.success).toBe(true);
+  });
+
+  it("no le impone ese mínimo a un participante: esa contraseña la decide quien la rota", () => {
+    const resultado = esquemaAltaUsuario.safeParse({
+      usuario: "nuevo.parti",
+      nombreVisible: "Nueva Persona",
+      rol: "participante",
+      contrasena: "grupo2026",
+    });
+    expect(resultado.success).toBe(true);
+  });
+
+  it("normaliza el usuario también en el alta", () => {
+    const resultado = esquemaAltaUsuario.safeParse({
+      usuario: "  José.García ",
+      nombreVisible: "José García",
+      rol: "participante",
+      contrasena: "x",
+    });
+    expect(resultado.success).toBe(true);
+    if (resultado.success) expect(resultado.data.usuario).toBe("jose.garcia");
   });
 });

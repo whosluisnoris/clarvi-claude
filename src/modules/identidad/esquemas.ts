@@ -104,11 +104,23 @@ export const esquemaAltaUsuario = z.object({
   cohorteId: z.uuid().nullable().default(null),
   rol: z.enum(["admin", "participante"]).default("participante"),
   notas: z.string().trim().max(2000).nullable().default(null),
-  // Solo para admins: los participantes reciben la contraseña global vigente.
-  contrasena: z
-    .string()
-    .min(12, "La contraseña de un admin debe tener al menos 12 caracteres.")
-    .optional(),
+  // Se pide siempre, no solo para admins: la contraseña global no se guarda
+  // en claro en ningún lado, así que al dar de alta a un participante el admin
+  // tiene que escribir la vigente. El mínimo es más alto para un admin porque
+  // su contraseña es individual y no entra en la rotación.
+  contrasena: z.string().min(1).optional(),
+}).superRefine((datos, ctx) => {
+  // El mínimo depende del rol, así que no puede vivir en el campo: la
+  // contraseña de un admin es individual, no se rota nunca en bloque y da
+  // acceso a la gestión de usuarios y a los resultados de todos. La de un
+  // participante es la del grupo, y su longitud la decide quien la rota.
+  if (datos.rol === "admin" && (datos.contrasena?.length ?? 0) < 12) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["contrasena"],
+      message: "La contraseña de un admin debe tener al menos 12 caracteres.",
+    });
+  }
 });
 
 export type DatosAltaUsuario = z.infer<typeof esquemaAltaUsuario>;

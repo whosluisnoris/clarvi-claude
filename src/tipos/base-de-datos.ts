@@ -216,6 +216,7 @@ export type Database = {
     Views: Record<never, never>;
     Functions: {
       ajustes_publicos: { Args: never; Returns: Json };
+      cerrar_sesiones_de: { Args: { id_usuario: string }; Returns: number };
       cohorte_actual: { Args: never; Returns: string };
       es_admin: { Args: never; Returns: boolean };
       usuario_activo: { Args: never; Returns: boolean };

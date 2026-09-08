@@ -24,15 +24,26 @@ import type { Database } from "@/tipos/base-de-datos";
  * siempre significa que falta una política, no que haga falta privilegio.
  */
 
-const claveDeServicio = z
-  .string()
-  .min(1, "Falta SUPABASE_SERVICE_ROLE_KEY (solo servidor, sin NEXT_PUBLIC_)")
-  .parse(process.env.SUPABASE_SERVICE_ROLE_KEY);
+/**
+ * La clave se lee y valida DENTRO de la función, no al cargar el módulo.
+ *
+ * Leerla arriba hacía fallar `next build` entero: al recolectar los datos de
+ * las páginas, Next evalúa los módulos, y una página que ni siquiera usa el
+ * cliente de servicio tumbaba la compilación por un secreto que solo hace
+ * falta en tiempo de ejecución. Además obliga a tener el secreto disponible
+ * en el entorno de build, que es justo donde no debería hacer falta.
+ */
+function leerClaveDeServicio(): string {
+  return z
+    .string()
+    .min(1, "Falta SUPABASE_SERVICE_ROLE_KEY (solo servidor, sin NEXT_PUBLIC_)")
+    .parse(process.env.SUPABASE_SERVICE_ROLE_KEY);
+}
 
 export function crearClienteAdmin() {
   return createClient<Database>(
     entorno.NEXT_PUBLIC_SUPABASE_URL,
-    claveDeServicio,
+    leerClaveDeServicio(),
     {
       auth: {
         // Este cliente no representa a nadie: no debe persistir ni refrescar

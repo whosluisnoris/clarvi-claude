@@ -30,9 +30,16 @@ if (!resultado.success) {
   const faltantes = resultado.error.issues
     .map((problema) => `  · ${problema.message}`)
     .join("\n");
+  // Lanzar deja el sitio entero en 500, y es deliberado: seguir con la
+  // configuración a medias daría fallos de sesión intermitentes, que cuestan
+  // muchísimo más de diagnosticar que un error que dice exactamente qué falta.
+  // Este mensaje se lee tanto en la terminal local como en los logs de Vercel,
+  // así que menciona los dos sitios donde puede estar el problema.
   throw new Error(
     `Faltan variables de entorno o están mal escritas:\n${faltantes}\n\n` +
-      `Copia .env.example a .env.local y llena los valores.`,
+      `En local: copia .env.example a .env.local y llena los valores.\n` +
+      `En Vercel: cárgalas en Settings → Environment Variables y vuelve a desplegar ` +
+      `(cambiarlas no re-despliega solo).`,
   );
 }
 
