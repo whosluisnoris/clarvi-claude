@@ -1,38 +1,39 @@
 {
+  "pages": [
+    { "id": "propuesta", "name": "Propuesta" },
+    { "id": "exploracion", "name": "Exploracion inicial" }
+  ],
   "artboards": [
-    { "file": "DireccionTecnica.dc.html", "title": "A · Tecnica", "x": 0, "y": 0, "w": 1180, "h": 960 },
-    { "file": "Main.dc.html", "title": "B · Editorial (candidata lider)", "x": 1300, "y": 0, "w": 1180, "h": 960 },
-    { "file": "DireccionExpresiva.dc.html", "title": "C · Expresiva", "x": 2600, "y": 0, "w": 1180, "h": 960 }
+    { "file": "Main.dc.html", "title": "Modernista", "page": "propuesta", "x": 0, "y": 0, "w": 1180, "h": 960 },
+    { "file": "DireccionExpresiva.dc.html", "title": "C · Expresiva (de donde partio)", "page": "propuesta", "x": 1300, "y": 0, "w": 1180, "h": 960 },
+    { "file": "DireccionTecnica.dc.html", "title": "A · Tecnica", "page": "exploracion", "x": 0, "y": 0, "w": 1180, "h": 960 },
+    { "file": "DireccionEditorial.dc.html", "title": "B · Editorial", "page": "exploracion", "x": 1300, "y": 0, "w": 1180, "h": 960 }
   ],
   "annotations": [
     {
-      "id": "brief",
+      "id": "propuesta-nota",
+      "page": "propuesta",
       "x": 0,
-      "y": -300,
-      "w": 500,
-      "text": "CLARVI CLAUDE — tres direcciones, la misma pantalla\n\nTodas muestran /temas/fundamentos-de-prompting con el mismo contenido, para que la comparacion sea de estilo y no de contenido. Elige una: sobre ella dibujo Login, Inicio e /admin/usuarios en alta fidelidad, y de ahi salen los tokens del codigo."
+      "y": -330,
+      "w": 520,
+      "text": "MODERNISTA\n\nTomando lo que te gusto de C —los numerales grandes, el bloque de color, la estructura declarada— pero con el vocabulario real del modernismo: reticula, filetes y aire hacen el trabajo de agrupar, en lugar de tarjetas.\n\nLo que quita, y es justo lo que delata a un diseno hecho por AI: esquinas redondeadas, sombras suaves, tarjetas identicas en rejilla, degradados. Aqui no hay ninguno.\n\nLo que agrega: papel calido en vez de blanco puro, interlineado generoso y un solo golpe de color colocado con intencion, no repartido. Archivo para todo, DM Mono para metadatos.\n\nNo pude leer el design system 'modernist' de Claude Design desde esta sesion (necesita /design-login interactivo), asi que esto viene de los principios del movimiento, no copiado de ese kit."
     },
     {
-      "id": "nota-a",
-      "x": 620,
-      "y": -300,
-      "w": 400,
-      "text": "A · TECNICA\n\nA favor: el tema es Claude, y esto se siente como herramienta de trabajo. Mono para prompts, densidad alta, mucha informacion por pantalla. Envejece bien.\n\nEn contra: leer parrafos largos en oscuro cansa, y este proyecto tiene mucho texto (explicaciones de reactivos, guias). Fuerza modo claro tambien, o cansa a las 3 semanas."
-    },
-    {
-      "id": "nota-b",
+      "id": "expresiva-nota",
+      "page": "propuesta",
       "x": 1300,
-      "y": -300,
-      "w": 400,
-      "text": "B · EDITORIAL — mi recomendacion\n\nA favor: es la que mejor sostiene lectura larga en telefono, que es donde el brief dice que la gente va a consultar. Serif de display da caracter sin gritar. El aire hace que un tema vacio no se vea roto.\n\nEn contra: menos densidad, mas scroll en las tablas del admin. Es la menos memorable de las tres en una captura de pantalla."
+      "y": -330,
+      "w": 420,
+      "text": "C · EXPRESIVA — la que te llamo la atencion\n\nLa dejo al lado para que veas que se conservo y que se cambio. Sus problemas: el contraste alto sostenido cansa, y cada tipo de contenido nuevo obligaria a una decision de diseno.\n\nYa lleva corregidos los colores que no llegaban a contraste AA."
     },
     {
-      "id": "nota-c",
-      "x": 2600,
-      "y": -300,
-      "w": 400,
-      "text": "C · EXPRESIVA\n\nA favor: memorable de verdad. Los bloques de color y los numerales grandes hacen que cada tema se distinga solo. Buena para una capacitacion que quiere sentirse como un evento.\n\nEn contra: la mas cara de mantener. Cada tipo de contenido nuevo (un aviso, un examen cronometrado, un estado de error) obliga a una decision de diseno. Y el contraste alto sostenido cansa."
+      "id": "exploracion-nota",
+      "page": "exploracion",
+      "x": 0,
+      "y": -260,
+      "w": 460,
+      "text": "Las dos primeras direcciones, guardadas como referencia. Ya no compiten: la propuesta viva esta en la pagina Propuesta.\n\nA ambas se les corrigieron los colores de texto secundario que quedaban por debajo de contraste AA."
     }
   ],
-  "launch": { "view": "canvas" }
+  "launch": { "view": "canvas", "page": "propuesta" }
 }
