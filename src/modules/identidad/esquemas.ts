@@ -131,3 +131,50 @@ export const esquemaRotacion = z.object({
     .min(10, "La contraseña del grupo debe tener al menos 10 caracteres.")
     .max(72, "La contraseña no puede pasar de 72 caracteres."),
 });
+
+/**
+ * Slug de una cohorte a partir de su nombre.
+ *
+ * Reusa la normalización de usuario —minúsculas y sin acentos— y separa con
+ * guiones en vez de puntos, que es el formato que exige la restricción CHECK
+ * de la tabla: `^[a-z0-9]+(-[a-z0-9]+)*$`.
+ */
+export function slugDeCohorte(nombre: string): string {
+  return normalizarUsuario(nombre)
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60)
+    .replace(/-+$/, "");
+}
+
+export const esquemaCohorte = z
+  .object({
+    id: z.uuid().optional(),
+    nombre: z
+      .string()
+      .trim()
+      .min(1, "Escribe el nombre de la cohorte.")
+      .max(120, "El nombre no puede pasar de 120 caracteres."),
+    descripcion: z.string().trim().max(2000).nullable().default(null),
+    iniciaEn: z.string().nullable().default(null),
+    terminaEn: z.string().nullable().default(null),
+  })
+  .superRefine((datos, ctx) => {
+    // La base tiene la misma restricción; validar aquí solo sirve para dar un
+    // mensaje entendible en vez de un error de Postgres.
+    if (datos.iniciaEn && datos.terminaEn && datos.terminaEn <= datos.iniciaEn) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["terminaEn"],
+        message: "La fecha de término tiene que ser posterior a la de inicio.",
+      });
+    }
+    if (slugDeCohorte(datos.nombre).length < 1) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["nombre"],
+        message: "El nombre necesita al menos una letra o número.",
+      });
+    }
+  });

@@ -6,7 +6,13 @@ import { crearClienteAdmin } from "@/lib/supabase/admin";
 import { crearClienteServidor } from "@/lib/supabase/servidor";
 import { registrarAuditoria } from "./auditoria";
 import { leerCsv, type FilaCsv } from "./csv";
-import { correoSintetico, esquemaAltaUsuario, esquemaRotacion } from "./esquemas";
+import {
+  correoSintetico,
+  esquemaAltaUsuario,
+  esquemaCohorte,
+  esquemaRotacion,
+  slugDeCohorte,
+} from "./esquemas";
 import { derivarHuella } from "./huella-contrasena";
 import { ipDeLaPeticion } from "./limite-intentos";
 
@@ -439,4 +445,119 @@ async function rotarUnaConReintento(
     if (intento === 0) await new Promise((r) => setTimeout(r, 400));
   }
   return false;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Cohortes
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Módulo deliberadamente mínimo: alta, edición y activar/desactivar.
+ *
+ * El facilitador confirmó que se maneja una cohorte a la vez, y el brief (§16)
+ * advierte contra sobre-diseñar esto. La tabla queda completa para cuando haya
+ * varias; la interfaz no se adelanta a ese día.
+ */
+export async function guardarCohorte(
+  _previo: ResultadoAccion,
+  datos: FormData,
+): Promise<ResultadoAccion> {
+  const guardia = await exigirAdmin();
+  if (!guardia.ok) return guardia;
+
+  const validacion = esquemaCohorte.safeParse({
+    id: datos.get("id") || undefined,
+    nombre: datos.get("nombre"),
+    descripcion: datos.get("descripcion") || null,
+    iniciaEn: datos.get("iniciaEn") || null,
+    terminaEn: datos.get("terminaEn") || null,
+  });
+
+  if (!validacion.success) {
+    return {
+      ok: false,
+      error: validacion.error.issues[0]?.message ?? "Revisa los datos.",
+    };
+  }
+
+  const cohorte = validacion.data;
+  const admin = crearClienteAdmin();
+
+  const campos = {
+    name: cohorte.nombre,
+    slug: slugDeCohorte(cohorte.nombre),
+    description: cohorte.descripcion,
+    starts_at: cohorte.iniciaEn,
+    ends_at: cohorte.terminaEn,
+  };
+
+  const { error } = cohorte.id
+    ? await admin.from("cohorts").update(campos).eq("id", cohorte.id)
+    : await admin.from("cohorts").insert(campos);
+
+  if (error) {
+    return {
+      ok: false,
+      error:
+        error.code === "23505"
+          ? "Ya existe una cohorte con un nombre muy parecido."
+          : "No se pudo guardar la cohorte.",
+    };
+  }
+
+  await registrarAuditoria({
+    accion: cohorte.id ? "cohorte.actualizada" : "cohorte.creada",
+    actorId: guardia.adminId,
+    tipoEntidad: "cohort",
+    entidadId: cohorte.id ?? null,
+    metadata: { nombre: cohorte.nombre },
+    ip: ipDeLaPeticion(await headers()),
+  });
+
+  revalidatePath("/admin/cohortes");
+  revalidatePath("/admin/usuarios");
+  return { ok: true, datos: undefined };
+}
+
+export async function cambiarEstadoCohorte(
+  cohorteId: string,
+  activar: boolean,
+): Promise<ResultadoAccion> {
+  const guardia = await exigirAdmin();
+  if (!guardia.ok) return guardia;
+
+  const admin = crearClienteAdmin();
+  const { error } = await admin
+    .from("cohorts")
+    .update({ is_active: activar })
+    .eq("id", cohorteId);
+
+  if (error) return { ok: false, error: "No se pudo cambiar el estado." };
+
+  // Desactivar una cohorte bloquea el acceso de su gente (lo valida
+  // usuario_activo() y también el login), pero quien ya tenga sesión abierta
+  // seguiría dentro hasta que caduque. Se cierran, igual que al desactivar a
+  // una persona.
+  if (!activar) {
+    const { data: integrantes } = await admin
+      .from("profiles")
+      .select("id")
+      .eq("cohort_id", cohorteId);
+
+    for (const persona of integrantes ?? []) {
+      await admin.rpc("cerrar_sesiones_de", { id_usuario: persona.id });
+    }
+  }
+
+  await registrarAuditoria({
+    accion: "cohorte.actualizada",
+    actorId: guardia.adminId,
+    tipoEntidad: "cohort",
+    entidadId: cohorteId,
+    metadata: { activa: activar },
+    ip: ipDeLaPeticion(await headers()),
+  });
+
+  revalidatePath("/admin/cohortes");
+  return { ok: true, datos: undefined };
 }
