@@ -154,7 +154,10 @@ públicas siguen validándose al arrancar, y eso es correcto: fallar ruidosament
 configuración a medias cuesta mucho menos que depurar sesiones que se caen de forma
 intermitente.
 
-**Deuda que pasa a la Fase 1:** la protección de despliegue de Vercel (`ssoProtection`) está
-activa para todo salvo dominios propios, así que ningún participante puede llegar a la
-aplicación. Hay que apagarla para producción o conectar un dominio propio antes de poder dar la
-capacitación.
+**Protección de despliegue.** `ssoProtection` venía activa para todo salvo dominios propios, lo
+que hacía que cada URL `.vercel.app` exigiera cuenta de Vercel: ningún participante podía llegar
+siquiera al login. Se apagó por decisión del facilitador. La aplicación queda alcanzable pero no
+desprotegida — tiene su propio login, RLS en todas las tablas y límite de intentos.
+
+Verificado contra producción: pedir `/admin/usuarios` sin sesión devuelve la pantalla de login,
+y las cabeceras de seguridad viajan en cada respuesta.
